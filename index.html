@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conscientização sobre Cyberbullying nas Escolas</title>
+    <style>
+        /* CSS Integrado */
+        :root {
+            --bg-color: #f4f6f9;
+            --text-color: #222222;
+            --primary-color: #1a365d;
+            --accent-color: #2b6cb0;
+            --card-bg: #ffffff;
+            --font-size-base: 18px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Barra de Acessibilidade Fixa */
+        .accessibility-bar {
+            background-color: #111;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .accessibility-btn {
+            background-color: #ffffff;
+            color: #111;
+            border: 2px solid #ffffff;
+            padding: 6px 12px;
+            margin-left: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .accessibility-btn:focus, .accessibility-btn:hover {
+            outline: 3px solid #f6ad55;
+            background-color: #e2e8f0;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.2rem;
+        }
+
+        /* Layout do Conteúdo Principal */
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--accent-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.6rem;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Caixa de Ajuda em Destaque */
+        .help-box {
+            background-color: #fff5f5;
+            border-left-color: #e53e3e;
+        }
+
+        .help-box h2 {
+            color: #c53030;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* Foco visível para navegação por teclado (Leitores de tela/Tab) */
+        a:focus, button:focus {
+            outline: 3px solid #f6ad55;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#conteudo-principal" style="position: absolute; left: -9999px;" onfocus="this.style.left='10px'">Pular para o conteúdo principal</a>
+
+    <div class="accessibility-bar" role="region" aria-label="Controles de Acessibilidade">
+        <span><strong>Acessibilidade:</strong></span>
+        <div>
+            <button class="accessibility-btn" onclick="alterarFonte(1)" aria-label="Aumentar o tamanho do texto">A+</button>
+            <button class="accessibility-btn" onclick="alterarFonte(-1)" aria-label="Diminuir o tamanho do texto">A-</button>
+            <button class="accessibility-btn" onclick="resetarFonte()" aria-label="Restaurar tamanho do texto padrão">A Padrão</button>
+        </div>
+    </div>
+
+    <header role="banner">
+        <h1>Conscientização e Prevenção do Cyberbullying</h1>
+        <p>Projeto de Apoio e Respeito para nossa comunidade de 1.500 alunos</p>
+    </header>
+
+    <main id="conteudo-principal" role="main">
+        
+        <section aria-labelledby="conceito">
+            <h2 id="conceito">O que é Cyberbullying? (Conceito Oficial)</h2>
+            <p>O <strong>cyberbullying</strong> é a prática da violência psicológica, discriminação, intimidação ou humilhação realizada de forma sistemática e intencional através de meios digitais, como redes sociais, aplicativos de mensagaria, jogos online e fóruns.</p>
+            <p>Diferente do bullying tradicional, a agressão virtual pode ocorrer 24 horas por dia e expandir-se rapidamente para uma grande audiência, multiplicando o impacto emocional na vítima.</p>
+        </section>
+
+        <section aria-labelledby="causas">
+            <h2 id="causas">Principais Causas no Ambiente Escolar</h2>
+            <p>Em uma escola com cerca de 1.500 estudantes, a diversidade é enorme, mas alguns fatores impulsionam essas atitudes virtuais:</p>
+            <ul>
+                <li><strong>Sensação de Anônimo:</strong> Acreditar erroneamente que estar atrás de uma tela impede a identificação do agressor.</li>
+                <li><strong>Busca por Aceitação e Popularidade:</strong> Excluir ou ridicularizar colegas para se firmar em determinado grupo social.</li>
+                <li><strong>Desconexão Empática:</strong> A distância física dificulta a percepção imediata do sofrimento alheio.</li>
+                <li><strong>Falta de Conscientização Digital:</strong> Desconhecimento sobre os limites da brincadeira e sobre as consequências legais dos atos na internet.</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="solucoes">
+            <h2 id="solucoes">Como Podemos Resolver e Prevenir?</h2>
+            <ul>
+                <li><strong>Pensar Antes de Postar ou Compartilhar:</strong> Não repassar conteúdos que diminuam ou exponham fotos e conversas de colegas.</li>
+                <li><strong>Promover a Empatia Digital:</strong> Tratar os outros no ambiente virtual com o mesmo respeito exigido no presencial.</li>
+                <li><strong>Denunciar nas Plataformas:</strong> Utilizar as ferramentas de bloqueio e denúncia das próprias redes sociais e jogos.</li>
+                <li><strong>Apoio da Orientação Escolar:</strong> Criar rodadas de conversa e canais abertos de escuta para mediação de conflitos dentro do colégio.</li>
+            </ul>
+        </section>
+
+        <section class="help-box" aria-labelledby="ajuda">
+            <h2 id="ajuda">Canais e Informações de Ajuda</h2>
+            <p>Se você ou algum colega está passando por essa situação, não guarde para si. <strong>Você não está sozinho(a)!</strong></p>
+            <ul>
+                <li><strong>Orientação Educacional da Escola:</strong> Procure a coordenação ou a equipe pedagógica do colégio para um acolhimento sigiloso.</li>
+                <li><strong>SaferNet Brasil:</strong> Plataforma de apoio com canal de denúncias e ajuda psicológica para crimes virtuais. Acesse: <a href="https://canaldeajuda.org.br" target="_blank" rel="noopener">canaldeajuda.org.br</a>.</li>
+                <li><strong>CVV (Centro de Valorização da Vida):</strong> Apoio emocional gratuito e confidencial. Ligue <strong>188</strong> ou acesse pelo chat no site.</li>
+                <li><strong>Guarde as Provas:</strong> Não apague as mensagens, tire fotos da tela (printscreens) com data e hora para que o caso possa ser apurado.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        <p>Desenvolvido por: <strong>Heloisa</strong> | Projeto Escolar de Conscientização Digital</p>
+    </footer>
+
+    <script>
+        let tamanhoAtual = 18; // Tamanho padrão em px
+
+        function alterarFonte(delta) {
+            tamanhoAtual += delta;
+            // Limites mínimo (14px) e máximo (26px) para manter o layout legível
+            if (tamanhoAtual < 14) tamanhoAtual = 14;
+            if (tamanhoAtual > 26) tamanhoAtual = 26;
+            document.documentElement.style.setProperty('--font-size-base', tamanhoAtual + 'px');
+        }
+
+        function resetarFonte() {
+            tamanhoAtual = 18;
+            document.documentElement.style.setProperty('--font-size-base', '18px');
+        }
+    </script>
+</body>
+</html>
