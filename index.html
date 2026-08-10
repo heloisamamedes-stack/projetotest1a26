@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conscientização e Combate ao Cyberbullying | Colégio Conecta</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7c3aed;
+            --accent: #ef4444;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+            --base-font-size: 100%;
+            --radius: 12px;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            --success: #16a34a;
+        }
+
+        /* Tema Alto Contraste para Acessibilidade */
+        body.high-contrast {
+            --bg-body: #000000;
+            --bg-card: #121212;
+            --text-main: #ffffff;
+            --text-muted: #e2e8f0;
+            --border-color: #ffffff;
+            --primary: #ffff00;
+            --primary-dark: #ffd700;
+            --secondary: #00ffff;
+            --accent: #ff0000;
+            --success: #00ff00;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: var(--base-font-size);
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Barra de Acessibilidade Superior */
+        .accessibility-bar {
+            background-color: var(--text-main);
+            color: var(--bg-body);
+            padding: 0.5rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .access-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-access {
+            background-color: transparent;
+            color: inherit;
+            border: 1px solid currentColor;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-access:hover, .btn-access:focus {
+            background-color: var(--primary);
+            color: #fff;
+            outline: 2px solid var(--primary);
+        }
+
+        /* Navegação */
+        header {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .badge-school {
+            background: var(--secondary);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        nav a:hover, nav a:focus {
+            color: var(--primary);
+        }
+
+        /* Layout Hero */
+        .hero {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(124, 58, 237, 0.08));
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        /* Grid de Seções */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .card h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            object-fit: cover;
+        }
+
+        /* Listas Estilizadas */
+        ul.custom-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        ul.custom-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        ul.custom-list li::before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -0.2rem;
+        }
+
+        /* Alerta de Leis e Penalidades */
+        .law-section {
+            background-color: var(--bg-card);
+            border-left: 6px solid var(--accent);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .law-badge {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            font-weight: bold;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+        }
+
+        /* Seção do Formulário de Denúncia */
+        .report-section {
+            background-color: var(--bg-card);
+            border: 2px solid var(--primary);
+            border-radius: var(--radius);
+            padding: 2.5rem 2rem;
+            margin: 3rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .report-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .report-header h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .anonymous-notice {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .form-group label span {
+            color: var(--accent);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+            outline: none;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            background-color: var(--primary);
+            color: #ffffff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s, transform 0.1s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-submit:active {
+            transform: scale(0.99);
+        }
+
+        /* Mensagem de Confirmação */
+        .feedback-message {
+            display: none;
+            background-color: rgba(22, 163, 74, 0.1);
+            border: 2px solid var(--success);
+            color: var(--text-main);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .feedback-message h3 {
+            color: var(--success);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Seção de Ajuda e Suporte */
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .help-card {
+            background: var(--bg-card);
+            border: 2px solid var(--primary);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .help-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .btn-call {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            transition: background 0.2s;
+        }
+
+        .btn-call:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--text-main);
+            color: var(--bg-body);
+            padding: 2rem 1rem;
+            margin-top: 4rem;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .sources {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            max-width: 600px;
+        }
+
+        .sources a {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .author-tag {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        /* Foco Acessível Globais */
+        *:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            nav ul { display: none; }
+            .accessibility-bar { justify-content: center; }
+            .report-section { padding: 1.5rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA DE ACESSIBILIDADE -->
+    <div class="accessibility-bar" role="region" aria-label="Ferramentas de Acessibilidade">
+        <span>Acessibilidade da Página</span>
+        <div class="access-buttons">
+            <button class="btn-access" id="increase-font" aria-label="Aumentar tamanho do texto">A+</button>
+            <button class="btn-access" id="decrease-font" aria-label="Diminuir tamanho do texto">A-</button>
+            <button class="btn-access" id="reset-font" aria-label="Restaurar tamanho do texto padrão">A normal</button>
+            <button class="btn-access" id="toggle-contrast" aria-label="Alternar modo de alto contraste">Alto Contraste</button>
+        </div>
+    </div>
+
+    <!-- CABEÇALHO -->
+    <header role="banner">
+        <div class="nav-container">
+            <div class="logo">
+                🛡️ ConectaSegura
+                <span class="badge-school">Comunidade de 1.500 Alunos</span>
+            </div>
+            <nav role="navigation" aria-label="Navegação Principal">
+                <ul>
+                    <li><a href="#conceito">O Conceito</a></li>
+                    <li><a href="#causas">Causas</a></li>
+                    <li><a href="#solucoes">Soluções</a></li>
+                    <li><a href="#leis">Legislação</a></li>
+                    <li><a href="#denuncia">Fazer Denúncia</a></li>
+                    <li><a href="#ajuda">Canais de Ajuda</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Juntos contra o Cyberbullying no Colégio</h1>
+            <p>Promovendo um ambiente digital seguro, empático e de respeito mútuo para nossos 1.500 estudantes, professores e famílias.</p>
+        </div>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container" id="main-content" role="main">
+
+        <!-- O CONCEITO OFICIAL -->
+        <section id="conceito" class="grid-2" aria-labelledby="title-conceito">
+            <div class="card">
+                <h2 id="title-conceito">
+                    <span>📖</span> O Conceito Oficial
+                </h2>
+                <p>O <strong>Cyberbullying</strong> é a prática sistemática de intimidação, humilhação, perseguição ou ameaça exercida no ambiente virtual (redes sociais, aplicativos de mensagens, jogos online e fóruns).</p>
+                <p>Diferente do bullying tradicional, ele possui <strong>alta velocidade de propagação</strong>, alcance ilimitado e a permanência de rastros virtuais que amplificam o sofrimento da vítima 24 horas por dia.</p>
+            </div>
+            <div>
+                <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcS7qzThsA4Wn4StzuWbhLza-nQ_wFdJkzgGplhJDqcYDwainYKBEDYgbdBWNp0m3awT1_xXDbzhQ9vxNGA" alt="Ilustração sobre conscientização e combate ao cyberbullying no ambiente escolar" class="card-img">
+            </div>
+        </section>
+
+        <!-- CAUSAS E SOLUÇÕES -->
+        <section class="grid-2">
+            <div id="causas" class="card" aria-labelledby="title-causas">
+                <h2 id="title-causas">⚠️ Principais Causas</h2>
+                <p>No contexto de uma escola com 1.500 alunos, a convivência digital pode apresentar desafios devido a:</p>
+                <ul class="custom-list">
+                    <li><strong>Sensação de Anonimato:</strong> Acreditar que perfis falsos ou telas protegem contra punições.</li>
+                    <li><strong>Falta de Empatia Digital:</strong> A ausência de contato visual reduz a percepção da dor alheia.</li>
+                    <li><strong>Busca por Validação:</strong> Desejo de obter curtidas e popularidade às custas da exposição do outro.</li>
+                    <li><strong>Desinformação:</strong> Falta de consciência sobre o impacto psicológico e a gravidade das ações virtuais.</li>
+                </ul>
+            </div>
+
+            <div id="solucoes" class="card" aria-labelledby="title-solucoes">
+                <h2 id="title-solucoes">💡 Soluções e Prevenção</h2>
+                <p>Ações preventivas contínuas para fortalecer o ambiente escolar:</p>
+                <ul class="custom-list">
+                    <li><strong>Letramento Digital:</strong> Oficinas sobre cidadania e uso ético da tecnologia.</li>
+                    <li><strong>Mediação Escolar:</strong> Comitês internos com representantes dos 1.500 estudantes para resolução de conflitos.</li>
+                    <li><strong>Apoio Psicológico:</strong> Atendimento orientado e escuta ativa para vítimas e agressores.</li>
+                    <li><strong>Canais Seguros de Denúncia:</strong> Mecanismos internos que garantem o sigilo e a ação rápida da gestão escolar.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- LEIS E PENALIZAÇÕES -->
+        <section id="leis" class="law-section" aria-labelledby="title-leis">
+            <span class="law-badge">Legislação Brasileira</span>
+            <h2 id="title-leis" style="margin-bottom: 1rem;">Penalizações e Leis Vigentes</h2>
+            <p>O cyberbullying não é uma brincadeira; é uma infração grave amparada pela legislação:</p>
+            
+            <ul class="custom-list">
+                <li><strong>Lei nº 13.185/2015:</strong> Institui o Programa de Combate à Intimidação Sistemática (Bullying e Cyberbullying) em todo o território nacional, responsabilizando estabelecimentos de ensino por promoverem medidas preventivas.</li>
+                <li><strong>Lei nº 14.811/2024 (Código Penal):</strong> Criminalizou formalmente o bullying e o cyberbullying no Brasil. A prática do cyberbullying (em ambientes virtuais) passa a ter pena de <strong>reclusão de 2 a 4 anos e multa</strong>, além de enquadrar crimes hediondos cometidos contra crianças e adolescentes.</li>
+            </ul>
+        </section>
+
+        <!-- FORMULÁRIO ANÔNIMO DE DENÚNCIA -->
+        <section id="denuncia" class="report-section" aria-labelledby="title-denuncia">
+            <div class="report-header">
+                <h2 id="title-denuncia">Canal Anônimo de Relato e Denúncia</h2>
+                <p>Seu relato é essencial para manter o colégio seguro. As informações enviadas vão direto para a equipe de orientação.</p>
+                <div class="anonymous-notice" role="note">
+                    🔒 100% Anônimo: Nenhum dado pessoal, e-mail ou IP é coletado.
+                </div>
+            </div>
+
+            <form id="report-form" aria-describedby="form-instructions">
+                <p id="form-instructions" class="sr-only" style="position:absolute; width:1px; height:1px; overflow:hidden;">
+                    Preencha o formulário abaixo para enviar sua denúncia. Os campos com asterisco são obrigatórios.
+                </p>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="incident-type">Tipo de Ocorrência <span>*</span></label>
+                        <select id="incident-type" class="form-control" required aria-required="true">
+                            <option value="" disabled selected>Selecione uma opção...</option>
+                            <option value="ofensas">Ofensas ou Ameaças Online</option>
+                            <option value="perfil-falso">Criação de Perfil Falso / Fake</option>
+                            <option value="fotos-videos">Vazamento de Fotos / Vídeos</option>
+                            <option value="exclusao-grupo">Exclusão ou Intimidação em Grupos (WhatsApp/Discord)</option>
+                            <option value="outro">Outro tipo de agressão digital</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="grade-affected">Série ou Turma Afetada (Opcional)</label>
+                        <input type="text" id="grade-affected" class="form-control" placeholder="Ex: 8º Ano B, 1º Ano Ensino Médio">
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="incident-details">Descrição do Ocorrido <span>*</span></label>
+                    <textarea id="incident-details" class="form-control" required aria-required="true" placeholder="Descreva o que aconteceu de forma detalhada (plataforma onde ocorreu, nomes citados, datas, etc.). Lembre-se: você não precisa se identificar."></textarea>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="file-evidence">Anexar Evidências ou Prints (Opcional)</label>
+                    <input type="file" id="file-evidence" class="form-control" accept="image/*,.pdf" aria-describedby="file-help">
+                    <small id="file-help" style="color: var(--text-muted); margin-top: 0.25rem;">
+                        Você pode anexar capturas de tela (prints) que ajudem na apuração (máximo 5MB).
+                    </small>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <span>📨</span> Enviar Denúncia Anônima
+                </button>
+            </form>
+
+            <div id="form-feedback" class="feedback-message" role="alert" aria-live="polite">
+                <h3>✅ Denúncia Enviada com Sucesso!</h3>
+                <p>Obrigado por ajudar a tornar nosso colégio mais seguro. A equipe de orientação analisará as informações com prioridade e sigilo absoluto.</p>
+            </div>
+        </section>
+
+        <!-- INFORMAÇÕES DE AJUDA -->
+        <section id="ajuda" aria-labelledby="title-ajuda">
+            <h2 id="title-ajuda" style="text-align: center; margin-bottom: 1rem;">Precisa de Ajuda? Não se Cale!</h2>
+            <p style="text-align: center; color: var(--text-muted);">Se você ou algum colega está passando por essa situação, procure suporte imediatamente:</p>
+            
+            <div class="help-grid">
+                <div class="help-card">
+                    <h3>Orientação Escolar</h3>
+                    <p>Procure a coordenação ou a equipe de psicologia do colégio.</p>
+                    <a href="#denuncia" class="btn-call">Fazer Relato Anônimo</a>
+                </div>
+                <div class="help-card">
+                    <h3>Disque 100</h3>
+                    <p>Canal público de Direitos Humanos. Gratuito, anônimo e 24h.</p>
+                    <a href="tel:100" class="btn-call">Ligar para 100</a>
+                </div>
+                <div class="help-card">
+                    <h3>SaferNet Brasil</h3>
+                    <p>Plataforma para denúncia e ajuda em crimes cibernéticos.</p>
+                    <a href="https://new.safernet.org.br/helpline" target="_blank" rel="noopener noreferrer" class="btn-call">Acessar Helpline</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="footer-content">
+            <div class="author-tag">Desenvolvido por Heloisa</div>
+            <div class="sources">
+                <p><strong>Fontes das informações:</strong></p>
+                <p>
+                    <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13185.htm" target="_blank" rel="noopener">Lei nº 13.185/2015</a> | 
+                    <a href="https://www.in.gov.br/en/web/dou/-/lei-n-14.811-de-12-de-janeiro-de-2024-537330761" target="_blank" rel="noopener">Lei nº 14.811/2024</a> | 
+                    <a href="https://new.safernet.org.br/" target="_blank" rel="noopener">SaferNet Brasil</a> | 
+                    Ministério da Educação (MEC)
+                </p>
+            </div>
+            <p style="font-size: 0.8rem; opacity: 0.7;">© Projeto Pedagógico de Conscientização Digital. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DE ACESSIBILIDADE E FORMULÁRIO -->
+    <script>
+        // Lógica para Controle de Tamanho da Fonte
+        let fontScale = 100;
+        const increaseBtn = document.getElementById('increase-font');
+        const decreaseBtn = document.getElementById('decrease-font');
+        const resetBtn = document.getElementById('reset-font');
+        const toggleContrastBtn = document.getElementById('toggle-contrast');
+
+        increaseBtn.addEventListener('click', () => {
+            if (fontScale < 130) {
+                fontScale += 10;
+                document.documentElement.style.fontSize = fontScale + '%';
+            }
+        });
+
+        decreaseBtn.addEventListener('click', () => {
+            if (fontScale > 85) {
+                fontScale -= 10;
+                document.documentElement.style.fontSize = fontScale + '%';
+            }
+        });
+
+        resetBtn.addEventListener('click', () => {
+            fontScale = 100;
+            document.documentElement.style.fontSize = '100%';
+        });
+
+        // Alternar Alto Contraste
+        toggleContrastBtn.addEventListener('click', () => {
+            document.body.classList.toggle('high-contrast');
+        });
+
+        // Simulação do Envio do Formulário Anônimo
+        const reportForm = document.getElementById('report-form');
+        const formFeedback = document.getElementById('form-feedback');
+
+        reportForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Impede o recarregamento da página
+            
+            // Exibe mensagem de confirmação acessível
+            reportForm.style.display = 'none';
+            formFeedback.style.display = 'block';
+            formFeedback.focus();
+        });
+    </script>
+</body>
+</html>
