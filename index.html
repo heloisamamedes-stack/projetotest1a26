@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conscientização sobre Cyberbullying nas Escolas</title>
+    <title>Conscientização e Prevenção do Cyberbullying - Colégio</title>
     <style>
-        /* CSS Integrado */
         :root {
             --bg-color: #f4f6f9;
             --text-color: #222222;
@@ -27,8 +26,8 @@
 
         /* Barra de Acessibilidade Fixa */
         .accessibility-bar {
-            background-color: #111;
-            color: #fff;
+            background-color: #111111;
+            color: #ffffff;
             padding: 10px 20px;
             display: flex;
             justify-content: space-between;
@@ -38,7 +37,7 @@
 
         .accessibility-btn {
             background-color: #ffffff;
-            color: #111;
+            color: #111111;
             border: 2px solid #ffffff;
             padding: 6px 12px;
             margin-left: 5px;
@@ -52,7 +51,6 @@
             background-color: #e2e8f0;
         }
 
-        /* Cabeçalho */
         header {
             background-color: var(--primary-color);
             color: #ffffff;
@@ -65,7 +63,6 @@
             font-size: 2.2rem;
         }
 
-        /* Layout do Conteúdo Principal */
         main {
             max-width: 900px;
             margin: 30px auto;
@@ -95,17 +92,40 @@
             margin-bottom: 10px;
         }
 
-        /* Caixa de Ajuda em Destaque */
-        .help-box {
+        /* Container de Imagem Acessível */
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+            background-color: #edf2f7;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .image-container svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Destaque de Legislação */
+        .law-box {
+            border-left-color: #c53030;
             background-color: #fff5f5;
-            border-left-color: #e53e3e;
+        }
+
+        .law-box h2 {
+            color: #9b2c2c;
+        }
+
+        /* Caixa de Ajuda */
+        .help-box {
+            background-color: #f0fff4;
+            border-left-color: #38a169;
         }
 
         .help-box h2 {
-            color: #c53030;
+            color: #276749;
         }
 
-        /* Rodapé */
         footer {
             background-color: var(--primary-color);
             color: #ffffff;
@@ -114,7 +134,6 @@
             margin-top: 40px;
         }
 
-        /* Foco visível para navegação por teclado (Leitores de tela/Tab) */
         a:focus, button:focus {
             outline: 3px solid #f6ad55;
         }
@@ -127,54 +146,83 @@
     <div class="accessibility-bar" role="region" aria-label="Controles de Acessibilidade">
         <span><strong>Acessibilidade:</strong></span>
         <div>
-            <button class="accessibility-btn" onclick="alterarFonte(1)" aria-label="Aumentar o tamanho do texto">A+</button>
-            <button class="accessibility-btn" onclick="alterarFonte(-1)" aria-label="Diminuir o tamanho do texto">A-</button>
-            <button class="accessibility-btn" onclick="resetarFonte()" aria-label="Restaurar tamanho do texto padrão">A Padrão</button>
+            <button class="accessibility-btn" onclick="alterarFonte(1)" aria-label="Aumentar o tamanho da fonte">A+</button>
+            <button class="accessibility-btn" onclick="alterarFonte(-1)" aria-label="Diminuir o tamanho da fonte">A-</button>
+            <button class="accessibility-btn" onclick="resetarFonte()" aria-label="Restaurar tamanho da fonte padrão">A Padrão</button>
         </div>
     </div>
 
     <header role="banner">
         <h1>Conscientização e Prevenção do Cyberbullying</h1>
-        <p>Projeto de Apoio e Respeito para nossa comunidade de 1.500 alunos</p>
+        <p>Projeto de Respeito Digital para nossa comunidade escolar de 1.500 alunos</p>
     </header>
 
     <main id="conteudo-principal" role="main">
+
+        <div class="image-container" role="img" aria-label="Ilustração mostrando três estudantes utilizando celulares para espalhar mensagens positivas e de respeito na internet.">
+            <svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100%" height="100%" fill="#edf2f7" rx="8"/>
+                <circle cx="200" cy="80" r="40" fill="#2b6cb0"/>
+                <path d="M160 160 C160 120, 240 120, 240 160 Z" fill="#2b6cb0"/>
+                <rect x="180" y="60" width="40" height="60" rx="5" fill="#ffffff" stroke="#1a365d" stroke-width="2"/>
+                <path d="M 150 50 Q 130 30 110 50 T 70 50" fill="none" stroke="#e53e3e" stroke-width="3"/>
+                <text x="200" y="185" font-family="Arial" font-size="14" fill="#1a365d" text-anchor="middle" font-weight="bold">Internet Segura e Respeito Digital</text>
+            </svg>
+        </div>
         
         <section aria-labelledby="conceito">
-            <h2 id="conceito">O que é Cyberbullying? (Conceito Oficial)</h2>
-            <p>O <strong>cyberbullying</strong> é a prática da violência psicológica, discriminação, intimidação ou humilhação realizada de forma sistemática e intencional através de meios digitais, como redes sociais, aplicativos de mensagaria, jogos online e fóruns.</p>
-            <p>Diferente do bullying tradicional, a agressão virtual pode ocorrer 24 horas por dia e expandir-se rapidamente para uma grande audiência, multiplicando o impacto emocional na vítima.</p>
+            <h2 id="conceito">Conceito Oficial de Cyberbullying</h2>
+            <p>O <strong>cyberbullying</strong> é a prática de intimidação, humilhação, discriminação, exposição vexatória ou agressão psicológica sistemática realizada através de meios digitais, como redes sociais, aplicativos de mensagens, jogos online e fóruns.</p>
+            <p>Em uma comunidade de 1.500 alunos, um único conteúdo ofensivo propagado na rede pode ser visto por centenas de pessoas em poucos minutos, multiplicando o impacto emocional sobre a vítima.</p>
         </section>
 
         <section aria-labelledby="causas">
-            <h2 id="causas">Principais Causas no Ambiente Escolar</h2>
-            <p>Em uma escola com cerca de 1.500 estudantes, a diversidade é enorme, mas alguns fatores impulsionam essas atitudes virtuais:</p>
+            <h2 id="causas">Causas no Ambiente Escolar</h2>
             <ul>
-                <li><strong>Sensação de Anônimo:</strong> Acreditar erroneamente que estar atrás de uma tela impede a identificação do agressor.</li>
-                <li><strong>Busca por Aceitação e Popularidade:</strong> Excluir ou ridicularizar colegas para se firmar em determinado grupo social.</li>
-                <li><strong>Desconexão Empática:</strong> A distância física dificulta a percepção imediata do sofrimento alheio.</li>
-                <li><strong>Falta de Conscientização Digital:</strong> Desconhecimento sobre os limites da brincadeira e sobre as consequências legais dos atos na internet.</li>
+                <li><strong>Sensação Falsa de Anônimo:</strong> Ilusão de que telas e perfis fakes protegem o agressor da identificação.</li>
+                <li><strong>Pressão Social e Popularidade:</strong> Busca por engajamento ou aceitação através da ridicularização alheia.</li>
+                <li><strong>Falta de Empatia Digital:</strong> Dificuldade em perceber a dor do outro por conta da distância física.</li>
+                <li><strong>Desinformação:</strong> Desconhecimento dos limites legais e das consequências graves dos atos na internet.</li>
+            </ul>
+        </section>
+
+        <section class="law-box" aria-labelledby="leis">
+            <h2 id="leis">Leis e Penalidades no Brasil</h2>
+            <p>Cyberbullying não é brincadeira, <strong>é crime tipificado no Código Penal Brasileiro (Artigo 146-A)</strong> através da <strong>Lei Nº 14.811/2024</strong>:</p>
+            <ul>
+                <li><strong>Definição Legal:</strong> Intimidação sistemática realizada em redes sociais, jogos virtuais ou qualquer ambiente digital.</li>
+                <li><strong>Penalidade de Reclusão:</strong> A pena para o crime de cyberbullying é de <strong>2 a 4 anos de reclusão, além de multa</strong>.</li>
+                <li><strong>Responsabilidade de Menores:</strong> Quando praticado por menores de 18 anos, o ato é enquadrado como <em>ato infracional</em> no Estatuto da Criança e do Adolescente (ECA), podendo gerar medidas socioeducativas e responsabilização civil dos pais ou responsáveis para indenização por danos morais.</li>
             </ul>
         </section>
 
         <section aria-labelledby="solucoes">
-            <h2 id="solucoes">Como Podemos Resolver e Prevenir?</h2>
+            <h2 id="solucoes">Soluções e Ações Práticas</h2>
             <ul>
-                <li><strong>Pensar Antes de Postar ou Compartilhar:</strong> Não repassar conteúdos que diminuam ou exponham fotos e conversas de colegas.</li>
-                <li><strong>Promover a Empatia Digital:</strong> Tratar os outros no ambiente virtual com o mesmo respeito exigido no presencial.</li>
-                <li><strong>Denunciar nas Plataformas:</strong> Utilizar as ferramentas de bloqueio e denúncia das próprias redes sociais e jogos.</li>
-                <li><strong>Apoio da Orientação Escolar:</strong> Criar rodadas de conversa e canais abertos de escuta para mediação de conflitos dentro do colégio.</li>
+                <li><strong>Não Pense, Não Repasse:</strong> Interrompa a corrente não compartilhando fotos, prints ou comentários pejorativos.</li>
+                <li><strong>Reporte e Bloqueie:</strong> Utilize os botões de denúncia e bloqueio das próprias plataformas digitais.</li>
+                <li><strong>Guarde Provas:</strong> Faça capturas de tela (prints) com data, hora e link do perfil agressor.</li>
+                <li><strong>Apoio Escolar:</strong> Comunique imediatamente os professores, a orientação ou a direção da escola.</li>
             </ul>
         </section>
 
         <section class="help-box" aria-labelledby="ajuda">
-            <h2 id="ajuda">Canais e Informações de Ajuda</h2>
-            <p>Se você ou algum colega está passando por essa situação, não guarde para si. <strong>Você não está sozinho(a)!</strong></p>
+            <h2 id="ajuda">Canais de Ajuda</h2>
             <ul>
-                <li><strong>Orientação Educacional da Escola:</strong> Procure a coordenação ou a equipe pedagógica do colégio para um acolhimento sigiloso.</li>
-                <li><strong>SaferNet Brasil:</strong> Plataforma de apoio com canal de denúncias e ajuda psicológica para crimes virtuais. Acesse: <a href="https://canaldeajuda.org.br" target="_blank" rel="noopener">canaldeajuda.org.br</a>.</li>
-                <li><strong>CVV (Centro de Valorização da Vida):</strong> Apoio emocional gratuito e confidencial. Ligue <strong>188</strong> ou acesse pelo chat no site.</li>
-                <li><strong>Guarde as Provas:</strong> Não apague as mensagens, tire fotos da tela (printscreens) com data e hora para que o caso possa ser apurado.</li>
+                <li><strong>Orientação Pedagógica da Escola:</strong> Canal interno seguro para escuta acolhedora e mediação.</li>
+                <li><strong>SaferNet Brasil:</strong> Ajuda e denúncias de crimes virtuais em <a href="https://canaldeajuda.org.br" target="_blank" rel="noopener">canaldeajuda.org.br</a>.</li>
+                <li><strong>CVV (Centro de Valorização da Vida):</strong> Apoio emocional gratuito e confidencial pelo telefone <strong>188</strong> ou pelo site.</li>
+                <li><strong>Disque 100:</strong> Disque Direitos Humanos para denúncias de violações contra crianças e adolescentes.</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="fontes">
+            <h2 id="fontes">Fontes de Informação</h2>
+            <ul>
+                <li><strong>Código Penal Brasileiro:</strong> Lei Nº 14.811/2024 e Lei Nº 13.185/2015 (Programa de Combate à Intimidação Sistemática).</li>
+                <li><strong>UNICEF Brasil:</strong> Guia de Prevenção ao Cyberbullying para Adolescentes.</li>
+                <li><strong>SaferNet Brasil:</strong> Plataforma de Direitos Humanos na Internet.</li>
+                <li><strong>Ministério da Educação (MEC):</strong> Diretrizes de Proteção à Criança e Adolescente nas Escolas.</li>
             </ul>
         </section>
 
@@ -185,11 +233,10 @@
     </footer>
 
     <script>
-        let tamanhoAtual = 18; // Tamanho padrão em px
+        let tamanhoAtual = 18;
 
         function alterarFonte(delta) {
             tamanhoAtual += delta;
-            // Limites mínimo (14px) e máximo (26px) para manter o layout legível
             if (tamanhoAtual < 14) tamanhoAtual = 14;
             if (tamanhoAtual > 26) tamanhoAtual = 26;
             document.documentElement.style.setProperty('--font-size-base', tamanhoAtual + 'px');
