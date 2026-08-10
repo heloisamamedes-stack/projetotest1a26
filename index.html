@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conscientização e Combate ao Cyberbullying</title>
+  <style>
+    :root {
+      --bg-color: #f8f9fa;
+      --text-color: #212529;
+      --primary-color: #1d3557;
+      --accent-color: #e63946;
+      --card-bg: #ffffff;
+      --border-color: #cccccc;
+      --base-font-size: 16px;
+    }
+
+    /* Alto Contraste */
+    body.high-contrast {
+      --bg-color: #000000;
+      --text-color: #ffffff;
+      --primary-color: #ffbe0b;
+      --accent-color: #ff0055;
+      --card-bg: #121212;
+      --border-color: #ffffff;
+    }
+
+    html {
+      font-size: var(--base-font-size);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Barra de Acessibilidade Ficha Topo */
+    .accessibility-bar {
+      background-color: #111;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .accessibility-bar button {
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #fff;
+      padding: 6px 12px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    .accessibility-bar button:focus,
+    .accessibility-bar button:hover {
+      outline: 3px solid #ffbe0b;
+      background-color: #555;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 10px 0;
+      font-size: 2.2rem;
+    }
+
+    nav {
+      background-color: #2a9d8f;
+      padding: 10px 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:focus, nav a:hover {
+      text-decoration: underline;
+      outline: 2px solid #ffffff;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 25px;
+      margin-bottom: 25px;
+      border-radius: 8px;
+    }
+
+    h2 {
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 8px;
+      margin-top: 0;
+    }
+
+    .img-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .img-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+    }
+
+    .alert-box {
+      background-color: rgba(230, 57, 70, 0.1);
+      border-left: 5px solid var(--accent-color);
+      padding: 15px;
+      margin: 15px 0;
+    }
+
+    ul, ol {
+      padding-left: 20px;
+    }
+
+    footer {
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Leitor de tela (Acessibilidade) */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de Acessibilidade -->
+  <div class="accessibility-bar" role="region" aria-label="Ferramentas de Acessibilidade">
+    <span>Acessibilidade:</span>
+    <div>
+      <button onclick="changeFontSize(1)" aria-label="Aumentar tamanho do texto">A +</button>
+      <button onclick="changeFontSize(-1)" aria-label="Diminuir tamanho do texto">A -</button>
+      <button onclick="resetFontSize()" aria-label="Restaurar tamanho do texto padrão">Tamanho Normal</button>
+      <button onclick="toggleContrast()" aria-label="Alternar para alto contraste">Alto Contraste</button>
+      <button onclick="readContent()" aria-label="Ouvir o texto principal da página">Leitor de Tela (Voz)</button>
+    </div>
+  </div>
+
+  <header role="banner">
+    <h1>Comunidade Escolar Segura: Diga Não ao Cyberbullying</h1>
+    <p>Projeto de Conscientização e Prevenção | Colégio com 1.500 Alunos</p>
+  </header>
+
+  <nav role="navigation" aria-label="Navegação Principal">
+    <ul>
+      <li><a href="#conceito">O que é?</a></li>
+      <li><a href="#causas">Causas</a></li>
+      <li><a href="#solucoes">Soluções</a></li>
+      <li><a href="#leis">Leis e Penalidades</a></li>
+      <li><a href="#ajuda">Canais de Ajuda</a></li>
+      <li><a href="#fontes">Fontes</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" role="main">
+
+    <!-- Seção 1: Conceito Oficial -->
+    <section id="conceito" aria-labelledby="tit-conceito">
+      <h2 id="tit-conceito">1. Conceito Oficial de Cyberbullying</h2>
+      <p>O <strong>cyberbullying</strong> é a prática recorrente de violência psicológica, intimidação, humilhação, perseguição ou difamação exercida através do uso de redes sociais, aplicativos de mensagens, jogos online ou plataformas digitais.</p>
+      <p>Diferente do bullying tradicional, a violência digital tem alto poder de propagação e permanência, podendo atingir a vítima 24 horas por dia dentro e fora do ambiente escolar.</p>
+
+      <div class="img-container">
+        <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRo3yG1beMLzFwdJw0YnOYJ_2k0VLsJN_r_lgG970kYVqxUMh_tp2FIIjZLSI_OBznd7gjV3pAv7YUzV8c" alt="Ilustração mostrando dois estudantes utilizando celulares com mensagens nocivas cruzadas entre eles, representando a prática de cyberbullying." />
+      </div>
+    </section>
+
+    <!-- Seção 2: Causas no contexto de 1.500 alunos -->
+    <section id="causas" aria-labelledby="tit-causas">
+      <h2 id="tit-causas">2. Causas no Contexto Escolar</h2>
+      <p>Em uma instituição de grande porte (como nosso colégio de <strong>1.500 alunos</strong>), as interações sociais migram intensamente para grupos virtuais da turma e redes sociais. As principais causas incluem:</p>
+      <ul>
+        <li><strong>Sensação de Anonimato:</strong> Uso de perfis falsos ou telas digitais que passam a falsa impressão de impunidade.</li>
+        <li><strong>Busca por Aceitação e Status:</strong> Exclusão ou humilhação de colegas para se afirmar dentro de determinado grupo social.</li>
+        <li><strong>Desinformação e Falta de Empatia Digital:</strong> A ausência do contato presencial imediato dificulta a percepção do dano emocional provocado na vítima.</li>
+        <li><strong>Efeito de Manada:</strong> O compartilhamento massivo de fotos, memes pejorativos e montagens sem filtro crítico pela comunidade estudantil.</li>
+      </ul>
+    </section>
+
+    <!-- Seção 3: Soluções -->
+    <section id="solucoes" aria-labelledby="tit-solucoes">
+      <h2 id="tit-solucoes">3. Soluções e Ações Preventivas</h2>
+      <p>Para proteger nossa comunidade de 1.500 estudantes, é necessária uma atuação conjunta entre alunos, professores e responsáveis:</p>
+      <ol>
+        <li><strong>Palestras e Rodas de Conversa:</strong> Debates contínuos sobre cidadania digital, empatia e uso seguro da tecnologia.</li>
+        <li><strong>Canal Seguro de Denúncias Interno:</strong> Criação de uma ouvidoria confidencial para estudantes reportarem casos à direção ou ao setor de psicologia escolar.</li>
+        <li><strong>Acompanhamento Pedagógico e Psicológico:</strong> Apoio imediato às vítimas e mediação reflexiva com os autores dos atos.</li>
+        <li><strong>Regimento Escolar Atualizado:</strong> Aplicação clara do regulamento escolar para sanções disciplinares a atos cometidos em plataformas vinculadas ao colégio.</li>
+      </ol>
+    </section>
+
+    <!-- Seção 4: Leis e Penalização -->
+    <section id="leis" aria-labelledby="tit-leis">
+      <h2 id="tit-leis">4. Legislação e Penalidades no Brasil</h2>
+      <div class="alert-box">
+        <p><strong>Atenção:</strong> Cyberbullying é crime no Brasil. As condutas na internet deixam rastros digitais e possuem consequências jurídicas tanto para adultos quanto para adolescentes.</p>
+      </div>
+      <ul>
+        <li><strong>Lei nº 14.811/2024:</strong> Incluiu o bullying e o cyberbullying no Código Penal Brasileiro (Art. 146-A). O cyberbullying é tipificado como crime com pena de reclusão de 2 a 4 anos e multa.</li>
+        <li><strong>Estatuto da Criança e do Adolescente (ECA):</strong> Menores de 18 anos que praticam atos infracionais (como cyberbullying) estão sujeitos a medidas socioeducativas.</li>
+        <li><strong>Marco Civil da Internet (Lei 12.965/2014):</strong> Garante a responsabilização por danos e o fornecimento de registros de acesso sob ordem judicial.</li>
+      </ul>
+
+      <div class="img-container">
+        <img src="https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=1105371788284228" alt="Infográfico explicativo sobre a Lei do Bullying e Cyberbullying no Brasil, listando condutas proibidas como agressões morais, verbais e psicológicas." />
+      </div>
+    </section>
+
+    <!-- Seção 5: Informações de Ajuda -->
+    <section id="ajuda" aria-labelledby="tit-ajuda">
+      <h2 id="tit-ajuda">5. Canais de Ajuda e Suporte</h2>
+      <p>Se você ou alguém do nosso colégio está sendo vítima de cyberbullying, peça ajuda imediatamente:</p>
+      <ul>
+        <li><strong>Coordenação e Orientação Escolar:</strong> Procure a equipe pedagógica do colégio para acolhimento imediato.</li>
+        <li><strong>SaferNet Brasil:</strong> Plataforma de denúncias e apoio psicológico gratuito em <a href="https://new.safernet.org.br/helpline" target="_blank" rel="noopener noreferrer">new.safernet.org.br/helpline</a>.</li>
+        <li><strong>Disque 100 (Direitos Humanos):</strong> Canal público para denúncias de violação dos direitos de crianças e adolescentes.</li>
+        <li><strong>CVV (Centro de Valorização da Vida):</strong> Ligue 188 para apoio emocional e prevenção do suicídio (atendimento 24h gratuito).</li>
+      </ul>
+    </section>
+
+    <!-- Seção 6: Fontes de Informação -->
+    <section id="fontes" aria-labelledby="tit-fontes">
+      <h2 id="tit-fontes">6. Fontes das Informações</h2>
+      <ul>
+        <li><strong>Lei nº 14.811/2024</strong> — Planalto / Código Penal Brasileiro.</li>
+        <li><strong>SaferNet Brasil</strong> — Guia de Cidadania e Segurança Digital.</li>
+        <li><strong>Ministério da Educação (MEC)</strong> — Programa de Combate ao Bullying nas Escolas (Lei nº 13.185/2015).</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2026 - Projeto de Conscientização Escolar contra o Cyberbullying</p>
+    <p>Desenvolvido por: <strong>Heloisa</strong></p>
+  </footer>
+
+  <!-- Script de Acessibilidade -->
+  <script>
+    let currentFontSize = 16;
+
+    function changeFontSize(step) {
+      currentFontSize += step * 2;
+      if (currentFontSize < 12) currentFontSize = 12;
+      if (currentFontSize > 26) currentFontSize = 26;
+      document.documentElement.style.setProperty('--base-font-size', currentFontSize + 'px');
+    }
+
+    function resetFontSize() {
+      currentFontSize = 16;
+      document.documentElement.style.setProperty('--base-font-size', '16px');
+    }
+
+    function toggleContrast() {
+      document.body.classList.toggle('high-contrast');
+    }
+
+    function readContent() {
+      const textToRead = document.getElementById('main-content').innerText;
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel(); // Parar leituras anteriores
+        const utterance = new SpeechSynthesisUtterance(textToRead);
+        utterance.lang = 'pt-BR';
+        utterance.rate = 1;
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert('Seu navegador não suporta o leitor de voz do sistema.');
+      }
+    }
+  </script>
+</body>
+</html>
